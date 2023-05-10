@@ -1,0 +1,88 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> List Books </h4>
+        </div>
+        <div class="card-body">
+          <table style="width: 100%" mat-table [dataSource]="dataSource" matSort
+                 class="mat-elevation-z8">
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by number">
+                Title
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by number">
+                description
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+            </ng-container>
+            <ng-container matColumnDef="langue">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by number">
+                langue
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.langueBook}} </td>
+            </ng-container>
+            <ng-container matColumnDef="category">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by number">
+                category
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.categories}} </td>
+            </ng-container>
+            <ng-container matColumnDef="nbrPage">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by number">
+                nbr Page
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.nbrpage}} </td>
+            </ng-container>
+            <ng-container matColumnDef="isPublic">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by number">
+                public
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.public}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Date">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by number">
+                Date
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.publish_date}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header
+                  sortActionDescription="Sort by symbol">
+                actions
+              </th>
+              <td mat-cell *matCellDef="let element">
+                <button (click)="edit(element)" mat-icon-button>
+                  <mat-icon color="warn">edit</mat-icon>
+                </button>
+                <button (click)="delete(element)" mat-icon-button>
+                  <mat-icon color="warn">delete</mat-icon>
+                </button>
+
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

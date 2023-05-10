@@ -1,0 +1,59 @@
+<form [formGroup]="bookForm" >
+  <div  class="home-container">
+    <h2> ADD Book</h2>
+
+    <div class="example-container">
+      <label for="exampleInputdate">title :</label>
+      <mat-form-field appearance="fill">
+        <mat-label>title  </mat-label>
+        <input  matInput formControlName="title"  >
+        <mat-error >test</mat-error>
+
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <label for="exampleInputdate">description :</label>
+      <mat-form-field appearance="fill">
+        <mat-label>description  </mat-label>
+        <input matInput formControlName="description" >
+        <mat-error >test</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="example-container">
+      <label for="exampleInputdate">nbrpage :</label>
+      <mat-form-field appearance="fill">
+        <mat-label>nbrpage  </mat-label>
+        <input type="number" matInput formControlName="nbrpage" >
+        <mat-error >test</mat-error>
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="fill">
+      <mat-label>category</mat-label>
+      <mat-select  formControlName="categories">
+        <mat-option *ngFor="let type of categories" [value]="type.value" >
+          {{type.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>langueBook</mat-label>
+      <mat-select  formControlName="langueBook">
+        <mat-option *ngFor="let type of langueBook" [value]="type.value" >
+          {{type.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <input  style="width: 100%" type="file"  (change)="onFileChanged($event)"  class="btn btn-light">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputdatee">publish date</label>
+      <input  type="date" class="form-control" id="exampleInputdatee" value="" formControlName="publish_date" >
+    </div>
+
+
+
+  </div>
+  <button class="btn btn-primary button"  (click)="createBook()">Create</button>
+</form>

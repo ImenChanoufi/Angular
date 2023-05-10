@@ -1,0 +1,12 @@
+.row{
+  text-align: center;
+}
+
+.btn-box a {
+  margin-right: 10 px !important;
+  margin-left: 10 px !important;
+}
+ngb-rating {
+  color: #DAA520;
+  font-size: 30px;
+}
